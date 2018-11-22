@@ -1,0 +1,64 @@
+/*!
+ * Start Bootstrap - Logo Nav (https://startbootstrap.com/template-overviews/logo-nav)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logo-nav/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 54px;
+    background-color: floralwhite;
+}
+
+.posterinside {
+    box-shadow: rgba(0, 0, 0, 0.6) 0 6px 12px -6px;
+}
+
+.title {
+    font: 36px Arial, sans-serif;
+    font-weight: normal;
+    line-height: 110%;
+    margin: 0px;
+    color: #444;
+    padding-bottom: 3px;
+}
+
+#titleyear {
+    color: silver;
+    font-family: Arial;
+    font-size: 25px;
+    line-height: 100%;
+}
+
+.list {
+    list-style: none;
+    margin-bottom: 12px;
+    font-size: 0.75em;
+    color: darkgray;
+    line-height: 1.2;
+}
+
+.list li {
+    margin-right: 12px;
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+p {
+    margin-top: -$base-spacing + 2px;
+}
+
+.form-control {
+    margin-right: 5px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}

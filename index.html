@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Movie Search</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+
+    <!-- Needed Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="movieCtrl">
+
+        <form ng-submit="submitSearch(myForm.$valid)" name="myForm" novalidate>
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                            </li>
+
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control" type="search" placeholder="Search" ng-model="search" aria-label="Search">
+
+                            <input type="Number" placeholder="Year" class="form-control" ng-model="YearSearch">
+
+                            <select placeholder="Type" class="form-control" ng-model="TypeSearch">
+                                <option value="movie">movie</option>
+                                <option value="series">series</option>
+                            </select>
+                            <button style="visibility: hidden;" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Page Content -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4" ng-repeat="x in Data">
+                        <br/>
+                        <h4 ng-model="display" ></h4>
+                        <h4 ng-click="showDetails(x.Title)">{{x.Title}}</h4>
+                        <img ng-src= "{{x.Poster}}" class="img-responsive margin posterinside" ng-click="showDetails(x.Title)" style="width:182px; height:268px;" alt="Image">
+                        <p ng-model="Poster1"></p>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                    </div>
+                    <div class="col-sm-4 funky-show-hide">
+                        <br/>
+                        <img class="posterinside" ng-show="Poster1" ng-src="{{ Poster1 }}" onerror="this.style.display='none'"/>
+                        <h3 class="title">{{Title}}</h3><span id="titleYear">{{ left }} {{Year}} {{ right }}</span>
+                        <ul class="list">
+                            <li>{{Rated}}</li>
+                            <li>{{Genre}}</li>
+                            <li>{{ImdbRating}}</li>
+                            <li>{{TotalSeasons}}</li>
+                            <li>{{Type}}</li>
+                        </ul>
+                        <p>{{Plot}}</p>
+                        <div>
+                            <p><strong>{{ Writtenby }}</strong> {{Writer}}</p>
+                            <p><strong>{{ directed }}</strong> {{Director}}</p>
+                            <p><strong>{{ starting }}</strong>{{Actors}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+        </form>
+        <!-- / .validation form -->
+
+    </div>
+    <!-- / .validation Div -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
