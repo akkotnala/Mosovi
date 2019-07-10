@@ -25,7 +25,7 @@ app.controller('movieCtrl', function ($scope, $http) {
             $scope.Poster1= "";
  
             if ($scope.search != null && $scope.YearSearch != null && $scope.TypeSearch != null){
-            $scope.urlsearch = "http://www.omdbapi.com/?s=" + $scope.search + "&y=" + $scope.YearSearch + "&type=" + $scope.TypeSearch + "&apikey=c2609f89";
+            $scope.urlsearch = "https://www.omdbapi.com/?s=" + $scope.search + "&y=" + $scope.YearSearch + "&type=" + $scope.TypeSearch + "&apikey=c2609f89";
             $scope.display = "loading plese wait";
             $http.get($scope.urlsearch).then(function (response) {
                 $scope.myData = response.data;
@@ -36,21 +36,21 @@ app.controller('movieCtrl', function ($scope, $http) {
             });
             }
             else if ($scope.search != null && $scope.TypeSearch != null && $scope.YearSearch == null) {
-                $scope.urlsearch2 = "http://www.omdbapi.com/?s=" + $scope.search + "&type=" + $scope.TypeSearch + "&apikey=c2609f89";
+                $scope.urlsearch2 = "https://www.omdbapi.com/?s=" + $scope.search + "&type=" + $scope.TypeSearch + "&apikey=c2609f89";
                 $scope.display = "loading plese wait";
                 $http.get($scope.urlsearch2).then(function (response) {
                     $scope.myData = response.data;
                     $scope.Data = $scope.myData.Search;
                 });
             } else if ($scope.search != null && $scope.YearSearch != null && $scope.TypeSearch == null) {
-                $scope.urlsearch3 = "http://www.omdbapi.com/?s=" + $scope.search + "&y=" + $scope.YearSearch + "&apikey=c2609f89";
+                $scope.urlsearch3 = "https://www.omdbapi.com/?s=" + $scope.search + "&y=" + $scope.YearSearch + "&apikey=c2609f89";
                 $http.get($scope.urlsearch3).then(function (response) {
                     $scope.myData = response.data;
                     console.log($scope.myData);
                     $scope.Data = $scope.myData.Search;
                 });
             } else if ($scope.search != null && $scope.YearSearch == null && $scope.TypeSearch == null) {
-                $scope.urlsearch3 = "http://www.omdbapi.com/?s=" + $scope.search+ "&apikey=c2609f89";
+                $scope.urlsearch3 = "https://www.omdbapi.com/?s=" + $scope.search+ "&apikey=c2609f89";
                 $http.get($scope.urlsearch3).then(function (response) {
                     $scope.myData = response.data;
                     console.log($scope.myData);
@@ -63,7 +63,7 @@ app.controller('movieCtrl', function ($scope, $http) {
             $scope.Display = "Invalid";
         }
         $scope.showDetails = function (movie_title) {
-            $scope.urlsearch4 = "http://www.omdbapi.com/?t=" + movie_title + "&plot=full&apikey=c2609f89";
+            $scope.urlsearch4 = "https://www.omdbapi.com/?t=" + movie_title + "&plot=full&apikey=c2609f89";
             console.log($scope.urlsearch4);
             $http.get($scope.urlsearch4).then(function (response) {
                 $scope.myData1 = response.data;
