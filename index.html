@@ -28,6 +28,7 @@
         <form ng-submit="submitSearch(myForm.$valid)" name="myForm" novalidate>
             <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+              <a class="navbar-brand" href="index.html">MoSoVi</a>
                 <div class="container">
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +46,8 @@
                             <input type="Number" placeholder="Year" class="form-control" ng-model="YearSearch">
 
                             <select placeholder="Type" class="form-control" ng-model="TypeSearch">
-                                <option value="movie">movie</option>
+                                <option value="">Select your option</option>
+                                <option value="movie">Movies</option>
                                 <option value="series">series</option>
                             </select>
                             <button style="visibility: hidden;" type="submit">Search</button>
@@ -60,14 +62,14 @@
                     <div class="col-sm-4" ng-repeat="x in Data">
                         <br/>
                         <h4 ng-model="display" ></h4>
-                        <h4 ng-click="showDetails(x.Title)">{{x.Title}}</h4>
+                        <h4 ng-click="showDetails(x.Title)" class="wrap-if-long ">{{x.Title}}</h4>
                         <img ng-src= "{{x.Poster}}" class="img-responsive margin posterinside" ng-click="showDetails(x.Title)" style="width:182px; height:268px;" alt="Image">
                         <p ng-model="Poster1"></p>
                     </div>
                 </div>
                 <!-- /.row -->
-
             </div>
+          
             <!-- /.container -->
             <div class="container">
                 <div class="row">

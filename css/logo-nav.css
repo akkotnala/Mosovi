@@ -11,6 +11,20 @@ body {
 
 .posterinside {
     box-shadow: rgba(0, 0, 0, 0.6) 0 6px 12px -6px;
+    transition: transform .5s ease;
+    cursor: pointer;
+}
+
+.posterinside:hover{
+ transform: scale(1.2);
+  transition: transform .5s ease;
+}
+
+.wrap-if-long {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .title {
